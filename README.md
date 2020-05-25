@@ -1,3 +1,7 @@
+## Custom package build
+
+dotnet pack -c Release /p:PublicRelease=false
+
 # .NET wrapper for libjpeg-turbo
 [![Build Status](https://dev.azure.com/qmfrederik/AS.TurboJpegWrapper/_apis/build/status/quamotion.AS.TurboJpegWrapper?branchName=master)](https://dev.azure.com/qmfrederik/AS.TurboJpegWrapper/_build/latest?definitionId=12&branchName=master)
 

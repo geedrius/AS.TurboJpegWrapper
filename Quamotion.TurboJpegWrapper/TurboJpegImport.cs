@@ -120,23 +120,7 @@ namespace TurboJpegWrapper
             // Any load errors would also be caught by us here, making it easier to troubleshoot.
             if (Environment.OSVersion.Platform == PlatformID.Win32NT)
             {
-                string nativeLibrariesDirectory;
-
-                if (Environment.Is64BitProcess)
-                {
-                    nativeLibrariesDirectory = Path.Combine(directory, "win7-x64");
-                }
-                else
-                {
-                    nativeLibrariesDirectory = Path.Combine(directory, "win7-x86");
-                }
-
-                if (!Directory.Exists(nativeLibrariesDirectory))
-                {
-                    throw new ArgumentOutOfRangeException(nameof(directory), $"The directory '{directory}' does not contain a subdirectory for the current architecture. The directory '{nativeLibrariesDirectory}' does not exist.");
-                }
-
-                string path = Path.Combine(nativeLibrariesDirectory, $"{UnmanagedLibrary}.dll");
+                string path = Path.Combine(directory, $"{UnmanagedLibrary}.dll");
 
                 if (!File.Exists(path))
                 {
